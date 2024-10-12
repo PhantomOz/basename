@@ -1,9 +1,13 @@
-const { createPublicClient, http } = require("viem");
+const { createPublicClient, http, namehash } = require("viem");
 const { base } = require("viem/chains");
-const L2ResolverAbi = require("./L2ResolverAbi");
+const L2ResolverAbi = require("./abi/L2ResolverAbi");
 const {
   convertReverseNodeToBytes,
 } = require("./utils/convertReverseNodeToBytes");
+const {
+  BasenameTextRecordKeys,
+  textRecordsKeysEnabled,
+} = require("./utils/constant");
 
 // Function to resolve a Basename
 const BASENAME_L2_RESOLVER_ADDRESS =
@@ -19,7 +23,6 @@ async function getBasenameAvatar(basename) {
     name: basename,
     universalResolverAddress: BASENAME_L2_RESOLVER_ADDRESS,
   });
-  console.log(avatar);
   return avatar;
 }
 
@@ -38,13 +41,18 @@ async function getBasenameTextRecord(basename, key) {
     const contractParameters = buildBasenameTextRecordContract(basename, key);
     const textRecord = await baseClient.readContract(contractParameters);
     return textRecord;
-  } catch (error) {}
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
 
 // Get a all TextRecords
-async function getBasenameTextRecords(basename) {
+async function getBasenameTextRecords(
+  basename,
+  textRecordsKeys = textRecordsKeysEnabled
+) {
   try {
-    const readContracts = textRecordsKeysEnabled.map((key) =>
+    const readContracts = textRecordsKeys.map((key) =>
       buildBasenameTextRecordContract(basename, key)
     );
     const textRecords = await baseClient.multicall({
@@ -52,7 +60,9 @@ async function getBasenameTextRecords(basename) {
     });
 
     return textRecords;
-  } catch (error) {}
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
 
 async function getBasename(address) {
@@ -67,7 +77,9 @@ async function getBasename(address) {
     if (basename) {
       return basename;
     }
-  } catch (error) {}
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
 
 module.exports = {
@@ -75,4 +87,6 @@ module.exports = {
   getBasenameAvatar,
   getBasenameTextRecord,
   getBasenameTextRecords,
+  BasenameTextRecordKeys,
+  textRecordsKeysEnabled,
 };

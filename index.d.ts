@@ -1,6 +1,11 @@
 import { Address } from "viem";
 
-export type Basename = `${string}.base.eth`;
+type Basename = `${string}.base.eth`;
+
+type RecordResult = {
+  result: string;
+  status: string;
+};
 
 export enum BasenameTextRecordKeys {
   Description = "description",
@@ -18,14 +23,14 @@ export enum BasenameTextRecordKeys {
 }
 
 declare module "basename" {
-  export async function getBasename(address: Address): Promise<string>;
-  export async function getBasenameAvatar(basename: Basename): Promise<string>;
-  export async function getBasenameTextRecord(
+  export function getBasename(address: Address): Promise<string>;
+  export function getBasenameAvatar(basename: Basename): Promise<string>;
+  export function getBasenameTextRecord(
     basename: string,
     key: BasenameTextRecordKeys
-  ): Promise<any>;
-  export async function getBasenameTextRecords(
+  ): Promise<string>;
+  export function getBasenameTextRecords(
     basename: string,
-    key: BasenameTextRecordKeys
-  ): Promise<any>;
+    key?: BasenameTextRecordKeys
+  ): Promise<RecordResult[]>;
 }

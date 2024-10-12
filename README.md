@@ -95,7 +95,7 @@ Retrieves the avatar URL for a given ENS basename.
 - **Returns:**
   - A `Promise` that resolves to a `string` containing the avatar URL.
 
-### `getBasenameTextRecord(basename: string, key: BasenameTextRecordKeys): Promise<any>`
+### `getBasenameTextRecord(basename: string, key: BasenameTextRecordKeys): Promise<string>`
 
 Fetches a specific text record from the ENS basename.
 
@@ -106,16 +106,16 @@ Fetches a specific text record from the ENS basename.
 - **Returns:**
   - A `Promise` that resolves to the text record value.
 
-### `getBasenameTextRecords(basename: string, key: BasenameTextRecordKeys): Promise<any>`
+### `getBasenameTextRecords(basename: string, key: BasenameTextRecordKeys): Promise<RecordResult[]>`
 
 Fetches all text records associated with the ENS basename.
 
 - **Parameters:**
   - `basename`: The ENS basename, such as `example.base.eth`.
-  - `key`: A `BasenameTextRecordKeys` enum to define the type of records.
+  - `key`: An array `BasenameTextRecordKeys` enum to define the type of records. _`optional`_
   
 - **Returns:**
-  - A `Promise` that resolves to an object containing all text records.
+  - An `Promise` that resolves to an object containing all text records.
 
 ### Enum: `BasenameTextRecordKeys`
 
