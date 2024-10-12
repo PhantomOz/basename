@@ -1,15 +1,40 @@
 {
-  "name": "basename",
+  "name": "@superdevfavour/basename",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "@SuperDevFavour(Favour Aniogor)",
+  "author": "@SuperDevFavour (Favour Aniogor)",
   "license": "ISC",
-  "description": "An easy tool to query for basename",
+  "description": "A TypeScript utility that simplifies interactions with Ethereum Name Service (ENS) basenames.",
   "dependencies": {
     "ethers": "^6.13.3",
     "viem": "^2.21.22"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhantomOz/basename.git"
+  },
+  "keywords": [
+    "basename",
+    "base",
+    "baseens",
+    "ens",
+    "ether",
+    "js",
+    "node",
+    "react",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/PhantomOz/basename/issues"
+  },
+  "homepage": "https://github.com/PhantomOz/basename#readme"
 }
