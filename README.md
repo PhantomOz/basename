@@ -136,9 +136,6 @@ This enum contains the keys that can be used to fetch various text records relat
   - `Avatar`: "avatar"
 
 
-
-```
-
 ### Key Points of the README:
 1. **Introduction**: Briefly explains what the package does.
 2. **Installation**: Includes how to install the package via npm or yarn.
