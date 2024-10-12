@@ -7,7 +7,7 @@
   },
   "author": "@SuperDevFavour (Favour Aniogor)",
   "license": "ISC",
-  "description": "A TypeScript utility that simplifies interactions with Ethereum Name Service (ENS) basenames.",
+  "description": "A JavaScript/TypeScript utility that simplifies interactions with Ethereum Name Service (ENS) basenames.",
   "dependencies": {
     "ethers": "^6.13.3",
     "viem": "^2.21.22"

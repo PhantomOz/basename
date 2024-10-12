@@ -1,6 +1,6 @@
 # @superdevfavour/basename
 
-A TypeScript utility that simplifies interactions with Ethereum Name Service (ENS) basenames, allowing you to retrieve basename information such as avatars, text records, and more. This package provides helper methods for working with ENS `.base.eth` domains.
+A JavaScript/TypeScript utility that simplifies interactions with Ethereum Name Service (ENS) basenames, allowing you to retrieve basename information such as avatars, text records, and more. This package provides helper methods for working with ENS `.base.eth` domains.
 
 ## Features
 
