@@ -135,9 +135,3 @@ This enum contains the keys that can be used to fetch various text records relat
   - `Discord`: "com.discord"
   - `Avatar`: "avatar"
 
-
-### Key Points of the README:
-1. **Introduction**: Briefly explains what the package does.
-2. **Installation**: Includes how to install the package via npm or yarn.
-3. **Usage**: Shows how to use the package with code examples for each function.
-4. **API Reference**: Provides detailed descriptions of the package's functions and enum values.
